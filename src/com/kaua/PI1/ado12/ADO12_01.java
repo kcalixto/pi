@@ -212,34 +212,17 @@ public class ADO12_01 {
     public static boolean bombsClose(int w, int h) {
         boolean up = true, down = true, left = true, right = true;
 
-        if (w == 0 && h == 0) {
-            up = false;
-            left = false;
-        } else if (w == 0) {
-            if (h == (size - 1)) {
-                down = false;
-                left = false;
-            } else if (h == 0) {
-                up = false;
-                left = false;
-            } else {
-                left = false;
-            }
-        } else if (w == (size - 1)) {
-            if (h == (size - 1)) {
-                right = false;
-                up = false;
-            } else if (h == 0) {
-                up = false;
-                left = false;
-            } else {
-                right = false;
-            }
+        if (w == size) {
+            right = false;
         }
-        if (h == (size - 1)) {
-            down = false;
-        } else if (h == 0) {
+        if (w == 0) {
+            left = false;
+        }
+        if (h == 0) {
             up = false;
+        }
+        if (h == size) {
+            down = false;
         }
 
         if (up) {
